@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <meta name="description" content="Make a login page" />
+    <meta name="keywords" content="HTML, CSS, JS" />
+    <meta name="author" content="Fannr" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/iconComputer.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <script
+      defer
+      src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+    ></script>
+    <script src="index.js" defer type="module"></script>
+  </head>
+
+  <body>
+    <section class="container login">
+      <div class="container__text">
+        <div class="content">
+          <!--  -->
+          <div class="title">
+            <p class="icon-title">
+              <iconify-icon icon="carbon:blog"></iconify-icon>
+            </p>
+            <p>Blogging.</p>
+          </div>
+          <!--  -->
+          <!--  -->
+          <h1>Sign Up</h1>
+          <!--  -->
+          <!--  -->
+          <form data-login="false">
+            <div class="form-group">
+              <input
+                class="input-form-register"
+                id="userInput"
+                autocomplete="off"
+                autofocus
+                type="text"
+                placeholder="Username..."
+              />
+              <small>Message</small>
+            </div>
+            <div class="form-group">
+              <input
+                class="input-form-register"
+                id="userEmail"
+                autocomplete="off"
+                type="email"
+                placeholder="example@gmail.com..."
+              />
+              <small>Message</small>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="input-form-register"
+                placeholder="Password..."
+                id="userPassword"
+              />
+              <small>Message</small>
+            </div>
+            <div class="form-group">
+              <input
+                class="input-form-register"
+                type="password"
+                placeholder="Confirm Password..."
+                id="userPassword2"
+              />
+              <small>Message</small>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="button disabled">Sign Up</button>
+            </div>
+          </form>
+          <!--  -->
+          <!--  -->
+          <div class="text-center">
+            <p>Already have an account yet? <a href="index.html">Sign in</a></p>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+      <div class="container__img">
+        <img src="./assets/img/banner.png" alt="Banner" />
+      </div>
+    </section>
+  </body>
+</html>

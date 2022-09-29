@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <style>
+      p {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body data-user>
+    <div class="container" style="text-align: center"></div>
+
+    <script>
+      const usersStorage = JSON.parse(localStorage.getItem("user"));
+
+      //! get baseRoot URL
+      const getBaseUrl = () => {
+        var re = new RegExp(/^.*\//);
+        return re.exec(window.location.href);
+      };
+
+      // http://127.0.0.1:5500/home.html?userId=?
+      let urlString = getBaseUrl().input;
+
+      const getUrlId = (url = urlString) => {
+        let paramString = url.split("/"),
+          lastIndexParam = paramString[paramString.length - 1],
+          getId = lastIndexParam.split("?"),
+          lastIndexGetId = getId[getId.length - 1],
+          valueId = lastIndexGetId.split("=")[1];
+
+        return valueId == undefined ? null : valueId;
+      };
+
+      const findDetails = (id) => {
+        const details = usersStorage.find((d) => {
+          return d.id == id;
+        });
+
+        return details;
+      };
+
+      const link = document.querySelectorAll("a");
+
+      for (const a of link) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const dataTargetId = this.dataset.id;
+          document.location.href = `details.html?id=${dataTargetId}`;
+        });
+      }
+
+      const dataDetails = findDetails(getUrlId(urlString));
+      if (dataDetails != undefined) {
+        console.log(dataDetails);
+
+        const container = document.querySelector(".container");
+        container.innerHTML = `
+        <div style="border: 2px solid black; padding: 20px 50px; border-radius: 4px;">
+          <h1>Your Account</h1>
+          <p style="margin-top: 10px">Id Users</p>
+          <small>${dataDetails.id}</small>
+
+          <p style="margin-top: 10px">Username</p>
+          <small>${dataDetails.username}</small>
+
+          <p style="margin-top: 10px">Email</p>
+          <small>${dataDetails.email}</small>
+
+          <p style="margin-top: 10px">Password</p>
+          <small>${dataDetails.password}</small>
+
+          <p style="margin-top: 10px">
+            <a href="index.html">Logout</a>
+          </p>
+        </div>
+        `;
+      } else {
+        console.log("Data not found!");
+      }
+    </script>
+  </body>
+</html>

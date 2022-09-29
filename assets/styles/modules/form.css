@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container .container__text,
+.container .container__img {
+  flex: 1;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container__text,
+.container__img {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 100px;
+  width: 100%;
+}
+
+.content.forgot {
+  width: 50%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.icon-title {
+  font-size: 1.5rem;
+  margin-top: 8px;
+}
+
+.title p:last-child {
+  font-size: 1.5rem;
+  font-family: "Rubik Dirt", cursive;
+}
+
+.disabled {
+  transition: 0.3s;
+  border: 1px solid rgba(41, 0, 162, 0.5) !important;
+  background: rgba(41, 0, 162, 0.5);
+  pointer-events: none;
+}
+
+.login h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  padding: 5px 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9em;
+  display: block;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.01);
+  color: rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+input:focus {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border: 1px solid rgb(41, 0, 162) !important;
+  background: rgb(41, 0, 162);
+  width: 100%;
+  padding: 0.9em;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgb(41, 0, 200);
+}
+
+.text-center {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.text-center > * {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 0 !important;
+    width: 80% !important;
+  }
+
+  .content.forgot {
+    width: 65% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .login h1 {
+    font-size: 2.4rem;
+  }
+
+  .container__img {
+    display: none;
+  }
+
+  .content {
+    padding: 0 !important;
+    width: 70% !important;
+  }
+
+  .content.forgot {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .content,
+  .content.forgot {
+    padding: 0;
+    width: 85% !important;
+  }
+
+  .login h1 {
+    font-size: 2.5rem;
+  }
+}
