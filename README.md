@@ -1,3 +1,3 @@
 ## Demo
 
-https://meal-finder-noerra.netlify.app/
+https://simple-system-auth.netlify.app/
